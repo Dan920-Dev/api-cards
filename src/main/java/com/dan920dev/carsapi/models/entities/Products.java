@@ -25,17 +25,18 @@ public class Products {
     private Double proPrecio;
 
     @Column(name = "imagen")
-    private byte[] imagen;
+    private String imagen;
 
     @Column(name = "estado")
     private Boolean estado;
 
-    @ManyToOne
-    @JoinColumn(name = "cat_id", referencedColumnName = "cat_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cat_id")
     private Categories categoria;
 
 
-    public Products(Long id, String proNombre, String proDescripcion, Double proPrecio, byte[] imagen, Boolean estado, Categories categoria) {
+
+    public Products(Long id, String proNombre, String proDescripcion, Double proPrecio, String imagen, Boolean estado, Categories categoria) {
        super();
         this.id = id;
         this.proNombre = proNombre;

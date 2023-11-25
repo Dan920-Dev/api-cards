@@ -7,6 +7,7 @@ import com.dan920dev.carsapi.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,8 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/MARKET/cars/")
+@RequestMapping("/MARKET/")
 public class categoriesController {
 
     @Autowired
@@ -33,7 +35,7 @@ public class categoriesController {
                     .toList();
 
 
-            return new ResponseEntity<>(categories, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
         }catch (Exception e){
 
             e.printStackTrace();

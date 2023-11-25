@@ -12,7 +12,7 @@ public class ProductDTO {
     private String name;
     private String description;
     private Double price;
-    // TODO IMAGE
+    private String image;
     private boolean state;
     private String cat_name;
 

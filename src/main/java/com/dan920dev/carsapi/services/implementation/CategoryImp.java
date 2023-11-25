@@ -18,9 +18,6 @@ public class CategoryImp implements CategoryService{
         return categoryRp.findAll();
     }
 
-    @Override
-    public Categories findById() {
-        return null;
-    }
+
 
 }
