@@ -1,7 +1,14 @@
 package com.dan920dev.carsapi.models.dtos;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CategoryDTO {
 
-    long id;
-    String name;
+    private long id;
+    private String name;
 }

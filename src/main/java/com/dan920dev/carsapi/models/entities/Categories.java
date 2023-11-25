@@ -1,11 +1,13 @@
 package com.dan920dev.carsapi.models.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-@Entity
+@Data
 @NoArgsConstructor
+@Entity
 @Table(name = "Categorias")
 public class Categories {
 
@@ -17,7 +19,9 @@ public class Categories {
     @Column(name = "nombre")
     private String nombre;
 
+
     public Categories(Long cat_id, String nombre) {
+        super();
         this.cat_id = cat_id;
         this.nombre = nombre;
     }

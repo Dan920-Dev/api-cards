@@ -2,8 +2,10 @@ package com.dan920dev.carsapi.models.entities;
 
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @Entity
 @NoArgsConstructor
 @Table(name = "Productos")
