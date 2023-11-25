@@ -1,4 +1,7 @@
 package com.dan920dev.carsapi.repository;
 
-public class categoriesRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface categoriesRepository extends JpaRepository {
+    // To use all methods of JPARepository
 }
