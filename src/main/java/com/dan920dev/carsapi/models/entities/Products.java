@@ -36,6 +36,7 @@ public class Products {
 
 
     public Products(Long id, String proNombre, String proDescripcion, Double proPrecio, byte[] imagen, Boolean estado, Categories categoria) {
+       super();
         this.id = id;
         this.proNombre = proNombre;
         this.proDescripcion = proDescripcion;

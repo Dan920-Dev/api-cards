@@ -1,5 +1,7 @@
 package com.dan920dev.carsapi.controllers;
 
+import com.dan920dev.carsapi.models.dtos.CategoryDTO;
+import com.dan920dev.carsapi.models.dtos.ProductDTO;
 import com.dan920dev.carsapi.models.entities.Categories;
 import com.dan920dev.carsapi.models.entities.Products;
 import com.dan920dev.carsapi.services.CategoryService;
@@ -19,14 +21,16 @@ import java.util.List;
 public class productsController {
 
     @Autowired
-    ProductsService categorySv;
+    ProductsService productsSv;
 
     @GetMapping("all")
     public ResponseEntity<?> getAllProducts(){
         try{
-            List<Products> response = new ArrayList<>();
+            List<Products> products = productsSv.getAll();
 
-
+            List<ProductDTO> response = products.stream()
+                    .map(product -> new ProductDTO(product.getId(), product.getProNombre(), product.getProDescripcion(), product.getProPrecio(), product.getEstado(), product.getCategoria().getNombre()))
+                    .toList();
             return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
         }catch (Exception e){
 
